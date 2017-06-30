@@ -100,12 +100,10 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/29/markdown-and-typora/index.html">
 <meta property="og:site_name" content="用玩的心态来学习">
 <meta property="og:description" content="Typora For Markdown语法typora编辑器使用指南Typora是一个功能强大的Markdown编辑器； 数学表达式使用$符号包裹tex命令，例如：$lim_{x \to \infty} \ exp(-x)=0$将产生如下表达式：   $lim_{x \to \infty} \ exp(-x)=0$ 下标下标使用~包裹，例如：$H~2~O$将生成水的表达式（注意：要使用$包裹）$H">
-<meta property="og:image" content="http://img3.imgtn.bdimg.com/it/u=3723182411,2912500644&fm=214&gp=0.jpg">
-<meta property="og:updated_time" content="2017-06-29T07:55:59.253Z">
+<meta property="og:updated_time" content="2017-06-30T10:30:03.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown_and_typora">
 <meta name="twitter:description" content="Typora For Markdown语法typora编辑器使用指南Typora是一个功能强大的Markdown编辑器； 数学表达式使用$符号包裹tex命令，例如：$lim_{x \to \infty} \ exp(-x)=0$将产生如下表达式：   $lim_{x \to \infty} \ exp(-x)=0$ 下标下标使用~包裹，例如：$H~2~O$将生成水的表达式（注意：要使用$包裹）$H">
-<meta name="twitter:image" content="http://img3.imgtn.bdimg.com/it/u=3723182411,2912500644&fm=214&gp=0.jpg">
 
 
 
@@ -401,7 +399,75 @@
 <p>*你好。typora！*</p>
 <p><em>你好。typora！</em></p>
 <h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>我们可以采用拖拽的方式，将本地文件夹中的I图片或者网络上的图片插图</p>
-<p><img src="http://img3.imgtn.bdimg.com/it/u=3723182411,2912500644&amp;fm=214&amp;gp=0.jpg" alt="点击查看源网页"></p>
+<h3 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h3><p>使用尖括号包裹的URL将产生一个连接；例如：<code>&lt;http://www.baidu.com&gt;</code>将产生连接:  <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>;网址要写标准；否则可能不会显示</p>
+<h3 id="目录列表Table-of-Content-toc"><a href="#目录列表Table-of-Content-toc" class="headerlink" title="目录列表Table of Content(toc)"></a>目录列表Table of Content(toc)</h3><p>输入<code>[toc]</code>然后回车，会产生一个目录，这个目录抽取了文章的所有标题；自动更新内容。(目录不能跨级；可能是造成页面生成目录失败的原因，下期验证)</p>
+<h3 id="水平分割线"><a href="#水平分割线" class="headerlink" title="水平分割线"></a>水平分割线</h3><p>使用三个*或者三个<code>-</code>，然后回车，来产生水平分割线。</p>
+<hr>
+<hr>
+<h3 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h3><p>我们可以对某一词语进行标注。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">某些人用过了才知道[^1]</div><div class="line">[^1]：这个是注释的内容 注释的编号需要相同</div></pre></td></tr></table></figure>
+<p>某些人用过了才知道<a href="注释">^1</a></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">|姓名|性别|毕业院校|工资|</div><div class="line">|:---|:---:|:---:|---:|(注意顿号的位置表示对齐方式)</div><div class="line">|洋洋|男|重庆交通大学|3200|</div><div class="line">|峰哥|男|河南大学|4000|</div><div class="line">|坑会|男|河南科技学院|3000|</div></pre></td></tr></table></figure>
+<p>将会产生</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">毕业院校</th>
+<th style="text-align:right">工资</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">洋洋</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">重庆交通大学</td>
+<td style="text-align:right">3200</td>
+</tr>
+<tr>
+<td style="text-align:left">峰哥</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">河南大学</td>
+<td style="text-align:right">4000</td>
+</tr>
+<tr>
+<td style="text-align:left">坑会</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">河南科技学院</td>
+<td style="text-align:right">3000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数学表达式块"><a href="#数学表达式块" class="headerlink" title="数学表达式块"></a>数学表达式块</h3><p>输入两个美元符号；然后回车就可以输入数学表达式。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$$\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 =  \begin&#123;vmatrix&#125; \mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\\end&#123;vmatrix&#125;$$</div></pre></td></tr></table></figure>
+<p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\end{vmatrix}<br>$$</p>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>我们可以选择有没有完成；在[]中填入x表示完成；也可以通过点击选择完成或者没完成；</p>
+<p><code>-[ ]</code>和<code>-[x]</code>两种方式</p>
+<p>-[ ] 吃饭</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>输入+，-，*，创建无序的列表；使用任意字母开头创建有序的列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">**无序列表**</div><div class="line">* 你好</div><div class="line">- 二货</div><div class="line">+ 成功</div></pre></td></tr></table></figure>
+<p><strong>无序列表</strong></p>
+<ul>
+<li>你好<ul>
+<li>二货<ul>
+<li>成功</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>nihao </li>
+<li>fsadf</li>
+<li>dfs</li>
+<li>fasdf </li>
+</ol>
+<h3 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h3><p>使用&gt;来插入块引用。例如：</p>
+<blockquote>
+<p>   这个是块引用</p>
+</blockquote>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>是用#的个数表示标题;有6个标题</p>
 
       
     </div>
@@ -585,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Typora-For-Markdown语法"><span class="nav-number">1.</span> <span class="nav-text">Typora For Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#typora编辑器使用指南"><span class="nav-number">1.1.</span> <span class="nav-text">typora编辑器使用指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数学表达式"><span class="nav-number">1.1.1.</span> <span class="nav-text">数学表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标"><span class="nav-number">1.1.2.</span> <span class="nav-text">下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上标"><span class="nav-number">1.1.3.</span> <span class="nav-text">上标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入表情"><span class="nav-number">1.1.4.</span> <span class="nav-text">插入表情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下划线"><span class="nav-number">1.1.5.</span> <span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除线"><span class="nav-number">1.1.6.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.7.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强调"><span class="nav-number">1.1.8.</span> <span class="nav-text">强调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斜体"><span class="nav-number">1.1.9.</span> <span class="nav-text">斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入图片"><span class="nav-number">1.1.10.</span> <span class="nav-text">插入图片</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Typora-For-Markdown语法"><span class="nav-text">Typora For Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#typora编辑器使用指南"><span class="nav-text">typora编辑器使用指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数学表达式"><span class="nav-text">数学表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下标"><span class="nav-text">下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上标"><span class="nav-text">上标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入表情"><span class="nav-text">插入表情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下划线"><span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除线"><span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强调"><span class="nav-text">强调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斜体"><span class="nav-text">斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入图片"><span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入URL连接"><span class="nav-text">插入URL连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录列表Table-of-Content-toc"><span class="nav-text">目录列表Table of Content(toc)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平分割线"><span class="nav-text">水平分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标注"><span class="nav-text">标注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学表达式块"><span class="nav-text">数学表达式块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务列表"><span class="nav-text">任务列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块引用"><span class="nav-text">块引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-text">标题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

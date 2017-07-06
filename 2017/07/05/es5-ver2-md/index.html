@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="变量、作用域变量 js的变量是松散类型的，即可以用来保存任何类型的数据  变量分为5种基本数据类型和1种复杂类型的：  基本类型：Undefined、Null、Boolean、Number和String 复杂类型：Object，Object本质上是由一组无序的名值对组成   在es 5中是可以使用typeof操作符进行数据类型的检测，其返回值：undefined、boolean、string、nu">
+<meta name="description" content="变量的操作 在使用引用类型操作时；js不允许直接访问内存的的位置，也就是说不能直接操作对象的内存空间，在操作对象时是操作的对象的引用  复制基本类型的变量值时；会在变量对象上创建一个新值；然后把该值复制到新变量分配的位置上 复制引用类型时：其实是复制的副本的一个指针，该指针的指向与复制对象的指向相同  函数的参数都是按值传递的；即把函数外部的值复制给函数内部的参数；函数的参数其实就是函数的内部变量">
 <meta name="keywords" content="js,变量,作用域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es5-ver">
-<meta property="og:url" content="http://yoursite.com/2017/07/04/es5-ver/index.html">
+<meta property="og:title" content="es5-ver2.md">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/es5-ver2-md/index.html">
 <meta property="og:site_name" content="用玩的心态来学习">
-<meta property="og:description" content="变量、作用域变量 js的变量是松散类型的，即可以用来保存任何类型的数据  变量分为5种基本数据类型和1种复杂类型的：  基本类型：Undefined、Null、Boolean、Number和String 复杂类型：Object，Object本质上是由一组无序的名值对组成   在es 5中是可以使用typeof操作符进行数据类型的检测，其返回值：undefined、boolean、string、nu">
-<meta property="og:updated_time" content="2017-07-05T08:55:23.127Z">
+<meta property="og:description" content="变量的操作 在使用引用类型操作时；js不允许直接访问内存的的位置，也就是说不能直接操作对象的内存空间，在操作对象时是操作的对象的引用  复制基本类型的变量值时；会在变量对象上创建一个新值；然后把该值复制到新变量分配的位置上 复制引用类型时：其实是复制的副本的一个指针，该指针的指向与复制对象的指向相同  函数的参数都是按值传递的；即把函数外部的值复制给函数内部的参数；函数的参数其实就是函数的内部变量">
+<meta property="og:updated_time" content="2017-07-06T08:01:10.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es5-ver">
-<meta name="twitter:description" content="变量、作用域变量 js的变量是松散类型的，即可以用来保存任何类型的数据  变量分为5种基本数据类型和1种复杂类型的：  基本类型：Undefined、Null、Boolean、Number和String 复杂类型：Object，Object本质上是由一组无序的名值对组成   在es 5中是可以使用typeof操作符进行数据类型的检测，其返回值：undefined、boolean、string、nu">
+<meta name="twitter:title" content="es5-ver2.md">
+<meta name="twitter:description" content="变量的操作 在使用引用类型操作时；js不允许直接访问内存的的位置，也就是说不能直接操作对象的内存空间，在操作对象时是操作的对象的引用  复制基本类型的变量值时；会在变量对象上创建一个新值；然后把该值复制到新变量分配的位置上 复制引用类型时：其实是复制的副本的一个指针，该指针的指向与复制对象的指向相同  函数的参数都是按值传递的；即把函数外部的值复制给函数内部的参数；函数的参数其实就是函数的内部变量">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/04/es5-ver/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/05/es5-ver2-md/"/>
 
 
 
 
 
-  <title>es5-ver | 用玩的心态来学习</title>
+  <title>es5-ver2.md | 用玩的心态来学习</title>
   
 
 
@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/04/es5-ver/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/es5-ver2-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="玩玩而已">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">es5-ver</h1>
+          <h1 class="post-title" itemprop="name headline">es5-ver2.md</h1>
         
 
         <div class="post-meta">
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T14:52:19+08:00">
-                2017-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T17:04:50+08:00">
+                2017-07-05
               </time>
             
 
@@ -372,84 +372,23 @@
       
 
       
-        <h2 id="变量、作用域"><a href="#变量、作用域" class="headerlink" title="变量、作用域"></a>变量、作用域</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
-<li><p>js的变量是松散类型的，即可以用来保存任何类型的数据</p>
-</li>
-<li><p>变量分为<strong>5</strong>种基本数据类型和<strong>1</strong>种复杂类型的：</p>
+        <h2 id="变量的操作"><a href="#变量的操作" class="headerlink" title="变量的操作"></a>变量的操作</h2><ol>
+<li><p>在使用引用类型操作时；js不允许直接访问内存的的位置，也就是说不能直接操作对象的内存空间，在操作对象时是操作的对象的引用</p>
+<ul>
+<li>复制基本类型的变量值时；会在变量对象上创建一个新值；然后把该值复制到新变量分配的位置上</li>
+<li>复制引用类型时：其实是复制的副本的一个指针，该指针的指向与复制对象的指向相同</li>
+</ul>
+<p>函数的参数都是按值传递的；即把函数外部的值复制给函数内部的参数；函数的参数其实就是函数的内部变量；</p>
 <ol>
-<li>基本类型：Undefined、Null、Boolean、Number和String</li>
-<li>复杂类型：Object，Object本质上是由一组<strong>无序</strong>的名值对组成</li>
+<li>变量的检测：基本类型的变量用typeof来检测类型；引用类型的需要使用instanceof来判断是不是一个对象的实例；基本类型的变量使用instanceof返回false；</li>
 </ol>
-</li>
-<li><p>在es 5中是可以使用<strong>typeof操作符</strong>进行数据类型的检测，其返回值：undefined、boolean、string、number、object、function。</p>
-</li>
-<li><p>在使用数值转换时的三种方法</p>
+<h3 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h3><p>执行环境定义了变量或者函数有权访问的其他数据，每一个执行环境都有一个与之关联的<strong>变量对象</strong> ；当代码在一个环境中执行时，会创建变量对象的一个作用域链。作用域链保证了对执行环境有权访问的所有变量和函数的有序访问。作用域链的前端始终是当前执行代码所在环境的变量对象；如果执行环境是个函数，则将其活动对象作为变量对象，活动对象最开始只包括一个变量，即arguments对象。</p>
+<p>作用域链中的下一个对象来自包含（外部）环境，再下一个变量对象怎来自下一个包含环境；一直延续到全局执行环境；全局执行环境的对象始终都是作用域链的最后一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color=<span class="string">"blue"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> anotherColor=<span class="string">"red"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> tempColor=anotherColor;</div><div class="line">		anotherColor=color;</div><div class="line">		color=tempColor;</div><div class="line">		<span class="comment">//三个变量都能访问到</span></div><div class="line">	&#125;</div><div class="line">	<span class="comment">//能访问两个变量</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//只能访问全局变量</span></div></pre></td></tr></table></figure>
+<p>内部函数可以通过作用域链访问外部函数的变量对象</p>
 <ol>
-<li>Number()函数的转换规则，在传入值不同下返回;<ul>
-<li>boolean值的true和false直接转换为1和0</li>
-<li>数值直接返回传入值</li>
-<li>null值返回0</li>
-<li>undefined返回NaN</li>
-<li>字符串：<ol>
-<li>字符串全为数字；将该字符串转为十进制；eg;”123”转为123，“0123”转为123</li>
-<li>如果字符串包含浮点格式“1.5”转为浮点值1.5，同样忽略前边的0；但是如果不是标准的浮点格式；会转为NaN;</li>
-<li>如果字符串是标准的十六进制格式“0xaf”则转为十进制175</li>
-<li>字符串为空转为0</li>
-<li>其他不符合该规则的字符串转为NaN</li>
+<li>声明变量：使用var声明的变量会自动添加到最接近的环境中；如果再使用变量前未声明；该变量会被自动添加到全局环境；严格模式下初始化未声明的变量会报错。</li>
 </ol>
-</li>
-<li>对象：传入值是对象先调用valueof()方法；依照上述规则转换</li>
-</ul>
-</li>
-<li>parseInt()函数容错比Number函数高；解析时如果第一个字符不是数字或者正负号，该函数会返回一个NaN，该函数第二个参数用来表示装换时使用的基数</li>
-<li>parseFloat()函数在在解析一个没有小数点或者小数点后全为零的字符点时返回的是个整数；</li>
-</ol>
-</li>
-<li><p>字符串生成后时不可变的；null和undefined不具有toString()方法。可以使用String()方法；在数值调用toString方法可以传参数用来指定在转换时的基数；</p>
-</li>
-<li><p>js中的对象其实就是一组数据和功能的集合：object的每个实例都具有下列属性和方法</p>
-<ol>
-<li>constructor：保存着用于创建当前对象的函数</li>
-<li>hasOwnProperty(propertyName)用于检测给定的属性在当前实例对象中是否存在；而不是在实例的原型中</li>
-<li>isPrototypeOf(object):用于检查传入的对象是否是当前对象的原型；</li>
-<li>toLocaleString()</li>
-<li>toString()</li>
-<li>valueOf()</li>
-</ol>
-</li>
-<li><p>操作符</p>
-<ol>
-<li>一元操作符：有前置型和后置型；这4个操作符对任何值都适用</li>
-<li>逻辑非操作符(!)：遵循规则<ul>
-<li>操作数是对象；返回false</li>
-<li>操作数的空字符串返回true</li>
-<li>非空字符串返回false</li>
-<li>0返回true；非0数值返回false</li>
-<li>null、undefined、NaN返回true</li>
-</ul>
-</li>
-<li>逻辑与(&amp;&amp;)，具有短路效应，即第一个操作数能够决定结果，那么不会对第二个操作数求值；逻辑与操作可以应用任何类型的操作数；而不仅仅是一个布尔值；在有一个操作数不是布尔值的情况下；逻辑与的返回值不一定是布尔值；遵循规则如下：<ul>
-<li>第一个操作数是对象；返回第二个操作数</li>
-<li>在第一个操作数逻辑值为true时返回第二个操作数，否则返回第一个操作数</li>
-</ul>
-</li>
-<li>逻辑或(||),逻辑或也是短路操作符，第一个操作数为true就不会对第二个操作数求值；如果有一个操作数不是布尔值，那么逻辑或也不一定返回布尔值</li>
-<li>关系操作符：关系操作符分为小于(&lt;)、大于、小于等于、大于等于，在使用关系操作符时注意隐式转换<ul>
-<li>数值的优先级比较高；如果一个操作数是字符串或者布尔值和一个数值比较；则先将字符串转为数值，注意：该转换方法调用的是Number()方法；然后进行比较；如果一个操作数是对象，则先调用valueof方法，没有valueof方法则调用toString方法</li>
-<li>当两个操作数都是都是字符串；则表两个字符中对应位置的字符的字符编码值</li>
-<li><strong>任何操作数与NaN比较都是false</strong> </li>
-</ul>
-</li>
-<li>相等操作符：相等和不相等、全等和不全等<ol>
-<li>相等和不相等是先转换再比较，，称为<strong>强制转型</strong> ，其规则与比较运算符区别如下<ul>
-<li>null和undefined相等，如果两个操作数都是对象；则比较这两个对象是不是指向的同一个对象</li>
-</ul>
-</li>
-<li>全等和不全等（===、!==）不转换就进行比较，类型和值全部相等才返回true</li>
-</ol>
-</li>
-</ol>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数的参数在内部是用一个伪数组arguments表示的；函数的length属性是表示形参的个数；arguments.length表示实参的个数；在js中函数没有才重载；函数在未指定返回值的情况下默认返回undefined</p>
 </li>
 </ol>
 
@@ -498,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/30/blogOfHexo/" rel="next" title="blogOfHexo">
-                <i class="fa fa-chevron-left"></i> blogOfHexo
+              <a href="/2017/07/04/es5-ver/" rel="next" title="es5-ver">
+                <i class="fa fa-chevron-left"></i> es5-ver
               </a>
             
           </div>
@@ -507,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/05/es5-ver2-md/" rel="prev" title="es5-ver2.md">
-                es5-ver2.md <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量、作用域"><span class="nav-text">变量、作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-text">函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的操作"><span class="nav-text">变量的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域"><span class="nav-text">执行环境和作用域</span></a></li></ol></li></ol></div>
             
 
           </div>

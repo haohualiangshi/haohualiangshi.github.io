@@ -57,12 +57,51 @@
 .bird {
 	min-width: 91px;
 	min-height: 71px;
-	top: 10%;
+	top: 1%;
 	position: absolute;
 	z-index: 10;
-	right: -91px;
+	right:0;
 	background:url(../images/bird.png) -182px 0 no-repeat
 }
+
+.bird2{
+	top:6%;
+	right:-50px;
+}
+.bird3{
+	top:12%;
+	right:-100px;
+}
+.bird4{
+	 top:18%;
+	right:-150px;
+ }
+.bird5{
+	  top:24%;
+	right:-200px;
+  }
+.bird6{
+	top:18%;
+	right:-250px;
+}
+.bird7{
+	top:12%;
+	right:-300px;
+}
+.bird8{
+	top:6%;
+	right:-350px;
+}
+.bird9{
+	right:-400px;
+}
+
+
+
+
+
+
+
 
 .birdFly {
 	-webkit-animation-name: bird-slow;

@@ -35,7 +35,7 @@
 	overflow: hidden
 }
 
-.snowRoll {
+.snowRoll,.picRoll {
 	position: absolute;
 	opacity: 0;
 	-webkit-animation-name: mysnow;
@@ -44,7 +44,40 @@
 	-moz-animation-duration: 20s;
 	height: 80px
 }
+.picRoll{
 
+	-webkit-animation-name: mysnow1;
+	-webkit-animation-duration: 20s;
+	-moz-animation-name: mysnow1;
+	-moz-animation-duration: 20s;
+}
+@-webkit-keyframes mysnow1 {
+	0% {
+		bottom: 100%
+	}
+
+	50% {
+		-webkit-transform: rotate(720deg)
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg) translate3d(50px,50px,50px)
+	}
+}
+
+@-moz-keyframes mysnow1 {
+	0% {
+		bottom: 100%
+	}
+
+	50% {
+		-moz-transform: rotate(720deg)
+	}
+
+	100% {
+		-moz-transform: rotate(0deg) translate3d(50px,50px,50px)
+	}
+}
 @-webkit-keyframes mysnow {
 	0% {
 		bottom: 100%

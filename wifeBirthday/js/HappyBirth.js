@@ -10,7 +10,8 @@ var Qixi = function() {
         audio: {
             enable: true,
             playURl: "music/happy.wav",
-            cycleURL: "music/circulation.wav"
+            cycleURL: "music/circulation.wav",
+            birthURL:"music/birthday.mp3"
         },
         setTime: {
             walkToThird: 6000,
@@ -25,7 +26,9 @@ var Qixi = function() {
             waitRotate: 850,
             waitFlower: 800
         },
-        snowflakeURl: ["images/flowers/flower1.png", "images/flowers/flower2.png", "images/flowers/flower3.png", "images/flowers/flower4.png", "images/flowers/flower5.png", "images/flowers/flower6.png"]
+        snowflakeURl: ["images/flowers/flower1.png", "images/flowers/flower2.png", "images/flowers/flower3.png", "images/flowers/flower4.png", "images/flowers/flower5.png", "images/flowers/flower6.png", "images/flowers/flower4.png", "images/flowers/flower5.png", "images/flowers/flower6.png", "images/flowers/flower6.png"],
+        heartImageUrl:["images/myHeartImages/heart1.jpg","images/myHeartImages/heart2.jpg","images/myHeartImages/heart3.jpg","images/myHeartImages/heart4.jpg","images/myHeartImages/heart5.jpg","images/myHeartImages/heart6.jpg","images/myHeartImages/heart7.jpg","images/myHeartImages/heart8.jpg","images/myHeartImages/heart9.jpg","images/myHeartImages/heart10.jpg","images/myHeartImages/heart11.jpg","images/myHeartImages/heart12.jpg","images/myHeartImages/heart13.jpg","images/myHeartImages/heart14.jpg"],
+        picShow:0
     };
     var debug = 0;
     if (debug) {
@@ -34,6 +37,9 @@ var Qixi = function() {
             confi.setTime[key] = 500
         })
     }
+    setInterval(function(){
+        confi.picShow=0
+    },50000)
     if (confi.keepZoomRatio) {
         var proportionY = 900 / 1440;
         var screenHeight = $(document).height();
@@ -72,7 +78,9 @@ var Qixi = function() {
     if (confi.audio.enable) {
         var audio1 = Hmlt5Audio(confi.audio.playURl);
         audio1.end(function() {
-            Hmlt5Audio(confi.audio.cycleURL, true)
+            // Hmlt5Audio(confi.audio.cycleURL, true)
+            Hmlt5Audio(confi.audio.birthURL, true)
+
         })
     }
     var swipe = Swipe(container);
@@ -326,13 +334,34 @@ var Qixi = function() {
         });
         return defer
     };
+
     function snowflake() {
         var $flakeContainer = $("#snowflake");
         function getImagesName() {
-            return confi.snowflakeURl[[Math.floor(Math.random() * 6)]]
+            var mathNum=Math.round(Math.random() * 10);
+            if(mathNum==10){
+                if(confi.picShow==1){
+                    return confi.snowflakeURl[1]
+                }
+                confi.picShow=1;
+                // console.log(confi.heartImageUrl[Math.floor(Math.random()*13)])
+                return confi.heartImageUrl[Math.floor(Math.random()*13)];
+            }
+            return confi.snowflakeURl[mathNum]
         }
         function createSnowBox() {
             var url = getImagesName();
+            if(url.indexOf("myHeartImages")>-1){
+                return $('<div class="snowbox" />').css({
+                    "width": 300,
+                    "height": 400,
+                    "position": "absolute",
+                    "backgroundSize": "cover",
+                    "zIndex": 100000,
+                    "top":"-400px",
+                    "backgroundImage": "url(" + url + ")"
+                }).addClass("picRoll")
+            }
             return $('<div class="snowbox" />').css({
                 "width": 41,
                 "height": 41,

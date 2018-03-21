@@ -39,7 +39,7 @@ var Qixi = function() {
     }
     setInterval(function(){
         confi.picShow=0
-    },2000)
+    },500)
     if (confi.keepZoomRatio) {
         var proportionY = 900 / 1440;
         var screenHeight = $(document).height();

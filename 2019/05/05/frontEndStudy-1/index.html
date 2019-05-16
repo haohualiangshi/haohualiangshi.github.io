@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-lans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端之路,html,css,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="苦中作乐" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="前端进阶之路-HTML+CSSHTML概念：HTML是用来描述网页的一种 超文本标记语言；由尖括号&amp;lt;&amp;gt;包围关键词组成；通常成对出现 标题标题是通过&amp;lt;h1&amp;gt;-&amp;lt;h6&amp;gt;等标签进行定义的； 1&amp;lt;h1&amp;gt;我是h1标题&amp;lt;h1&amp;gt; 段落段落是通过&amp;lt;p&amp;gt;标签进行定义的； 1&amp;lt;p&amp;gt;我是一段文字&amp;lt;/p&amp;gt; 链接链接是通过&amp;lt">
+<meta name="keywords" content="前端之路,html,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="frontEndStudy-1">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/frontEndStudy-1/index.html">
+<meta property="og:site_name" content="苦中作乐">
+<meta property="og:description" content="前端进阶之路-HTML+CSSHTML概念：HTML是用来描述网页的一种 超文本标记语言；由尖括号&amp;lt;&amp;gt;包围关键词组成；通常成对出现 标题标题是通过&amp;lt;h1&amp;gt;-&amp;lt;h6&amp;gt;等标签进行定义的； 1&amp;lt;h1&amp;gt;我是h1标题&amp;lt;h1&amp;gt; 段落段落是通过&amp;lt;p&amp;gt;标签进行定义的； 1&amp;lt;p&amp;gt;我是一段文字&amp;lt;/p&amp;gt; 链接链接是通过&amp;lt">
+<meta property="og:locale" content="zh-lans">
+<meta property="og:updated_time" content="2019-05-05T02:29:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="frontEndStudy-1">
+<meta name="twitter:description" content="前端进阶之路-HTML+CSSHTML概念：HTML是用来描述网页的一种 超文本标记语言；由尖括号&amp;lt;&amp;gt;包围关键词组成；通常成对出现 标题标题是通过&amp;lt;h1&amp;gt;-&amp;lt;h6&amp;gt;等标签进行定义的； 1&amp;lt;h1&amp;gt;我是h1标题&amp;lt;h1&amp;gt; 段落段落是通过&amp;lt;p&amp;gt;标签进行定义的； 1&amp;lt;p&amp;gt;我是一段文字&amp;lt;/p&amp;gt; 链接链接是通过&amp;lt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/05/frontEndStudy-1/">
+
+
+
+
+
+  <title>frontEndStudy-1 | 苦中作乐</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-lans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苦中作乐</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">坚持就是胜利</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/frontEndStudy-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦中作乐">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">frontEndStudy-1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T10:29:15+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前端进阶之路-HTML-CSS"><a href="#前端进阶之路-HTML-CSS" class="headerlink" title="前端进阶之路-HTML+CSS"></a>前端进阶之路-HTML+CSS</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p><strong>概念：</strong>HTML是用来描述网页的一种 <strong>超文本标记语言</strong>；由尖括号<code>&lt;&gt;</code>包围关键词组成；通常成对出现</p>
+<h5 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h5><p>标题是通过<code>&lt;h1&gt;-&lt;h6&gt;</code>等标签进行定义的；</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是h1标题<span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h5><p>段落是通过<code>&lt;p&gt;</code>标签进行定义的；</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一段文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h5><p>链接是通过<code>&lt;a&gt;</code>标签定义的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://haohualiangshi.github.io/"</span>&gt;</span>这个链接会跳转到我的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>图片</strong></p>
+<p>图片是通过<code>&lt;img&gt;</code>标签定义的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"链接地址"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>属性</strong></p>
+<p>标签可以拥有属性；以健值对的形式出现；</p>
+<p><strong>文本格式化标签</strong></p>
+<p>HTML定义了很多提供格式化输出的元素；如粗体或者斜体</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;b&gt;&lt;/b&gt;</code></td>
+<td>定义粗体文本</td>
+</tr>
+<tr>
+<td><code>&lt;big&gt;&lt;/big&gt;</code></td>
+<td>定义大号子</td>
+</tr>
+<tr>
+<td><code>&lt;em&gt;&lt;/em&gt;</code></td>
+<td>定义着重文字</td>
+</tr>
+<tr>
+<td><code>&lt;i&gt;&lt;/i&gt;</code></td>
+<td>定义斜体字</td>
+</tr>
+<tr>
+<td><code>&lt;small&gt;&lt;/small&gt;</code></td>
+<td>定义小号子</td>
+</tr>
+<tr>
+<td><code>&lt;strong&gt;&lt;/strong&gt;</code></td>
+<td>定义加重语气</td>
+</tr>
+<tr>
+<td><code>&lt;sub&gt;&lt;/sub&gt;</code></td>
+<td>定义下标字</td>
+</tr>
+<tr>
+<td><code>&lt;sup&gt;&lt;/sup&gt;</code></td>
+<td>定义上标字</td>
+</tr>
+<tr>
+<td><code>&lt;ins&gt;&lt;/ins&gt;</code></td>
+<td>定义插入字</td>
+</tr>
+<tr>
+<td><code>&lt;del&gt;&lt;/del&gt;</code></td>
+<td>定义删除字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>计算机输出标签</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;code&gt;&lt;/code&gt;</code></td>
+<td>定义计算机代码</td>
+</tr>
+<tr>
+<td><code>&lt;kbd&gt;&lt;/kbd&gt;</code></td>
+<td>定义键盘码</td>
+</tr>
+<tr>
+<td><code>&lt;var&gt;&lt;/var&gt;</code></td>
+<td>定义变量</td>
+</tr>
+<tr>
+<td><code>&lt;pre&gt;&lt;/pre&gt;</code></td>
+<td>定义预格式文本</td>
+</tr>
+</tbody>
+</table>
+<p><strong>引用和术语定义</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;abbr&gt;&lt;/abbr&gt;</code></td>
+<td>定义缩写</td>
+</tr>
+<tr>
+<td><code>&lt;address&gt;&lt;/address&gt;</code></td>
+<td>定义地址</td>
+</tr>
+<tr>
+<td><code>&lt;blockquote&gt;&lt;/blockquote&gt;</code></td>
+<td>定义长的引用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>定义css的方式</strong></p>
+<ul>
+<li><p>外部样式：定义一个css文件，通过<code>&lt;link&gt;</code>标签引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"样式地址"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内部样式：通过<code>&lt;style&gt;</code>标签写在html内部</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;background-color: red&#125;</span></span><br><span class="line"><span class="undefined">  p &#123;margin-left: 20px&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>内联样式:通过<code>style</code>属性写在标签上</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color: red; margin-left: 20px"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>表格</strong></p>
+<p>表格通过<code>&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code>标签来定义</p>
+<table>
+<thead>
+<tr>
+<th>表格</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;table&gt;&lt;/table&gt;</code></td>
+<td>定义表格</td>
+</tr>
+<tr>
+<td><code>&lt;caption&gt;&lt;/caption&gt;</code></td>
+<td>定义表格标题</td>
+</tr>
+<tr>
+<td><code>&lt;th&gt;&lt;/th&gt;</code></td>
+<td>定义表格的表头</td>
+</tr>
+<tr>
+<td><code>&lt;tr&gt;&lt;/tr&gt;</code></td>
+<td>定义表格的行</td>
+</tr>
+<tr>
+<td><code>&lt;td&gt;&lt;/td&gt;</code></td>
+<td>定义表格单元</td>
+</tr>
+<tr>
+<td><code>&lt;thead&gt;&lt;/thead&gt;</code></td>
+<td>定义表格页眉</td>
+</tr>
+<tr>
+<td><code>&lt;tbody&gt;&lt;/tbody&gt;</code></td>
+<td>定义表格主题</td>
+</tr>
+<tr>
+<td><code>&lt;tfoot&gt;&lt;/tfoot&gt;</code></td>
+<td>定义表格页脚</td>
+</tr>
+<tr>
+<td><code>&lt;col&gt;&lt;/col&gt;</code></td>
+<td>定义表格列属性</td>
+</tr>
+<tr>
+<td><code>&lt;colgroup&gt;&lt;/group&gt;</code></td>
+<td>定义表格列的组</td>
+</tr>
+</tbody>
+</table>
+<p><strong>列表</strong>：</p>
+<ul>
+<li><p>有序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>Black hot drink<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>White cold drink<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p><strong>概念：</strong>css称为层叠样式表，可以通过权重实现样式的叠加覆盖；css样式由选择器和属性/属性值构成；</p>
+<p><strong>权重：</strong>权重指的是样式的优先级</p>
+<ul>
+<li>!important,加在样式属性值后。权重值为10000</li>
+<li>内联样式。权重为1000</li>
+<li>id选择器。权重为100</li>
+<li>类/伪类/属性选择器权重为10</li>
+<li>标签选择器和伪元素选择器权重为1</li>
+<li>通配符选择器/子选择器/相邻选择器/兄弟选择器权重为0；</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.class-name</td>
+<td>.bg</td>
+<td>类选择器</td>
+</tr>
+<tr>
+<td>#id-name</td>
+<td>#id</td>
+<td>id选择器</td>
+</tr>
+<tr>
+<td>*</td>
+<td>*{}</td>
+<td>通配符选择器</td>
+</tr>
+<tr>
+<td>element</td>
+<td>div</td>
+<td>元素选择器</td>
+</tr>
+<tr>
+<td>element,element</td>
+<td>div,p</td>
+<td>并集选择器（选择器分组）</td>
+</tr>
+<tr>
+<td>element element</td>
+<td>div div</td>
+<td>后代选择器</td>
+</tr>
+<tr>
+<td>element&gt;element</td>
+<td>div&gt;div</td>
+<td>子代选择器（子元素选择器）</td>
+</tr>
+<tr>
+<td>element+element</td>
+<td>div+div</td>
+<td>兄弟选择器，符合条件的下一个兄弟元素</td>
+</tr>
+<tr>
+<td>[attribute]</td>
+<td>[href]</td>
+<td>属性选择器</td>
+</tr>
+<tr>
+<td>[attribute=value]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[attribute~=value]</td>
+<td></td>
+<td>选择属性包含指定值的所有元素</td>
+</tr>
+<tr>
+<td>[attribute\</td>
+<td>=value]</td>
+<td></td>
+<td>选择属性带有包含指定值的的所有元素设置样式</td>
+</tr>
+<tr>
+<td>:link</td>
+<td></td>
+<td>伪类选择器，超链接点击之前</td>
+</tr>
+<tr>
+<td>:visited</td>
+<td></td>
+<td>伪类选择器，超链接点击之后</td>
+</tr>
+<tr>
+<td>:active</td>
+<td></td>
+<td>伪类选择器，获取焦点的状态</td>
+</tr>
+<tr>
+<td>:hover</td>
+<td></td>
+<td>伪类选择器，鼠标悬停在标签上部</td>
+</tr>
+<tr>
+<td>:focus</td>
+<td></td>
+<td>伪类选择器，鼠标按下的状态</td>
+</tr>
+<tr>
+<td>:first-letter</td>
+<td></td>
+<td>伪元素选择器， 向段落的第一个字符添加特殊样式</td>
+</tr>
+<tr>
+<td>:first-line</td>
+<td></td>
+<td>伪元素选择器，向段落的第一行添加特殊样式</td>
+</tr>
+<tr>
+<td>:first-child</td>
+<td></td>
+<td>伪类选择器，选择元素的第一个子元素</td>
+</tr>
+<tr>
+<td>::before</td>
+<td></td>
+<td>伪元素，需要使用content属性配合</td>
+</tr>
+<tr>
+<td>::after</td>
+<td></td>
+<td>伪元素，同上</td>
+</tr>
+<tr>
+<td>:lang(language)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>分类：</strong>按照功能可分为布局，修饰文案，背景；</p>
+<ul>
+<li><p>布局：</p>
+<ul>
+<li><p>盒模型种类：标准盒模型和IE盒模型；区别是对待padding值和border不同的解决方案</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-sizing:content-box; //标准盒模型</span><br><span class="line">box-sizing:border-box;	// IE盒模型</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内边距:padding:padding-top padding-right padding-bottom padding-left;</p>
+</li>
+<li><p>外边距:margin:margin-top margin-right margin-bottom margin-left;</p>
+</li>
+<li><p>边框</p>
+<ul>
+<li><p>边框样式，可以定义多个样式；顺序是上右下左：border-style:border-top-style border-right-style border-bottom-style border-left-style;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.aside</span> &#123;<span class="attribute">border-style</span>: solid dotted dashed double;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>边框宽度：可定义多个宽度：border-width:border-top-width border-right-width border-bottom-width border-left-width;</p>
+</li>
+<li><p>边框颜色：可定义多个颜色；border-color: border-top-color border-right-color border-bottom-color border-left-color;</p>
+</li>
+</ul>
+</li>
+<li><p>外边距合并:当两个垂直外边距相遇时；他们将形成一个外边距；合并后的外边距的高度等于两个发生合并的元素中外边距最大的那个；</p>
+</li>
+<li><p>定位：</p>
+<ul>
+<li><code>position:static</code>:元素文档正常生成；不脱离文档流；</li>
+<li><code>position:relative</code>:相对定位；脱离文档流；元素相对本身进行定位；但原本所占空间保留</li>
+<li><code>position:absolute</code>:绝对定位；脱离文档流；相对最近一个设置<code>position:relative/absolute/fixed</code>属性的父元素定位；</li>
+<li><code>position:fixed</code>:绝对定位；相对于视图进行定位</li>
+</ul>
+</li>
+<li><p>浮动：<code>float</code>脱离文档流；使用<code>clear</code>清除浮动</p>
+</li>
+</ul>
+</li>
+<li><p>修饰文案</p>
+<ul>
+<li>字体大小：<code>font-size</code></li>
+<li>文本缩进：<code>text-indent</code></li>
+<li>对齐方式:<code>text-align</code></li>
+<li>文字间隔:<ul>
+<li><code>word-spacing</code>：设置文字或者单词之间的间隔标准</li>
+<li><code>letter-spacing</code>: 设置字母间隔</li>
+</ul>
+</li>
+<li>字符转换：<code>text-transform</code>处理文本的大小写</li>
+<li>文本装饰</li>
+<li>空白字符处理：<code>white-space</code>会影响到用户代理对源文档中空格/换行和tab字符串的处理</li>
+<li>设置文本方向：<code>text-direction</code>设置文本的对齐方向</li>
+<li>设置字体：<code>font-family</code></li>
+</ul>
+<p><strong>demo：单行省略</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>多行省略；适用于<code>-webkit-</code>内核</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">height</span>：300<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 3;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>背景</p>
+<ul>
+<li><p>背景色：<code>background-color</code></p>
+</li>
+<li><p>背景图: <code>background-image:url(背景图路径)</code>定义引入的背景图路径</p>
+</li>
+<li><p>背景平铺：<code>background-repeat</code></p>
+</li>
+<li><p>背景定位：<code>background-position</code></p>
+</li>
+<li><p>背景大小：<code>background-size</code></p>
+</li>
+<li><p>背景关联: <code>background-attachment</code>通过该属性可以声明图像相对于可视区是固定的活着滚动的；</p>
+</li>
+<li><p>综合属性：<code>background:属性集合,空格隔开</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span><span class="selector-pseudo">:background-color</span> <span class="selector-tag">background-image</span> <span class="selector-tag">background-repeat</span> <span class="selector-tag">background-position</span> <span class="selector-tag">background-size</span> <span class="selector-tag">background-attachment</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>颜色</strong>：css中颜色有六种定义方法</p>
+<ul>
+<li>十六进制：<code>#fff,#f2f3f4</code></li>
+<li>RGB颜色：<code>rgb(0,0,255)</code></li>
+<li>RGBA颜色：<code>rgba(255,0,0,0.5)</code></li>
+<li>HSL:<code>hsl(120,65%,75%)</code>;色盘上的度数（从 0 到 360） - 0 (或 360) 是红色，120 是绿色，240 是蓝色。Saturation 是百分比值；0% 意味着灰色，而 100% 是全彩。Lightness 同样是百分比值；0% 是黑色，100% 是白色。</li>
+<li>HSLA颜色：<code>hsla(120,65%,75%,0.3)</code>:hsla(hue色调, saturation色饱和度, lightness亮度, alpha不透明度)</li>
+<li>预定义/跨浏览器颜色名：green；red</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haohualiangshi.github.io/wechatpay.jpg" alt="AHao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haohualiangshi.github.io/alipay.jpg" alt="AHao Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端之路/" rel="tag"># 前端之路</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/10/flex总结/" rel="next" title="flex总结">
+                <i class="fa fa-chevron-left"></i> flex总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/07/前端进阶之路-webSocket/" rel="prev" title="前端进阶之路-webSocket">
+                前端进阶之路-webSocket <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="AHao">
+          <p class="site-author-name" itemprop="name">AHao</p>
+           
+              <p class="site-description motion-element" itemprop="description">阿豪的个人博客、主要涉及前端知识点和swift</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/haohualiangshi/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://blog.csdn.net/github_37195944" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-rotate-right"></i>
+                  
+                    
+                      CSDN
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端进阶之路-HTML-CSS"><span class="nav-number">1.</span> <span class="nav-text">前端进阶之路-HTML+CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#标题"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#段落"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#链接"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">1.2.</span> <span class="nav-text">CSS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AHao</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

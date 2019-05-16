@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-lans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="边框,阴影,background, transition,动画,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="苦中作乐" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="边框在使用css2是我们能够使用border属性添加边框；但是要实现圆角效果是很棘手的；但使用CSS3新增的边框属性我们能够轻易实现这一效果；CSS3新增的边框属性：  border-radius实现盒子的圆角 box-shadow属性添加盒阴影 border-image属性可以使用图像创建一个边框  border-radius该属性是一个速记属性；用于设置盒子圆角的半径； 1border-rad">
+<meta name="keywords" content="边框,阴影,background, transition,动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端进阶之路-css3新增属性及使用">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/前端进阶之路-css3新增属性及使用/index.html">
+<meta property="og:site_name" content="苦中作乐">
+<meta property="og:description" content="边框在使用css2是我们能够使用border属性添加边框；但是要实现圆角效果是很棘手的；但使用CSS3新增的边框属性我们能够轻易实现这一效果；CSS3新增的边框属性：  border-radius实现盒子的圆角 box-shadow属性添加盒阴影 border-image属性可以使用图像创建一个边框  border-radius该属性是一个速记属性；用于设置盒子圆角的半径； 1border-rad">
+<meta property="og:locale" content="zh-lans">
+<meta property="og:updated_time" content="2019-05-07T10:34:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端进阶之路-css3新增属性及使用">
+<meta name="twitter:description" content="边框在使用css2是我们能够使用border属性添加边框；但是要实现圆角效果是很棘手的；但使用CSS3新增的边框属性我们能够轻易实现这一效果；CSS3新增的边框属性：  border-radius实现盒子的圆角 box-shadow属性添加盒阴影 border-image属性可以使用图像创建一个边框  border-radius该属性是一个速记属性；用于设置盒子圆角的半径； 1border-rad">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/07/前端进阶之路-css3新增属性及使用/">
+
+
+
+
+
+  <title>前端进阶之路-css3新增属性及使用 | 苦中作乐</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-lans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苦中作乐</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">坚持就是胜利</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/前端进阶之路-css3新增属性及使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦中作乐">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端进阶之路-css3新增属性及使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T13:59:41+08:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h4><p>在使用css2是我们能够使用<code>border</code>属性添加边框；但是要实现圆角效果是很棘手的；但使用CSS3新增的边框属性我们能够轻易实现这一效果；CSS3新增的边框属性：</p>
+<ul>
+<li><code>border-radius</code>实现盒子的圆角</li>
+<li><code>box-shadow</code>属性添加盒阴影</li>
+<li><code>border-image</code>属性可以使用图像创建一个边框</li>
+</ul>
+<h4 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h4><p>该属性是一个速记属性；用于设置盒子圆角的半径；</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 1-4 length|% / 1-4 length|%;</span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong> 每个半径的四个值的顺序是：左上角，右上角，右下角，左下角。如果省略左下角，右上角是相同的。如果省略右下角，左上角是相同的。如果省略右上角，左上角是相同的</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 2em 1em 4em （水平半径）/ 0.5em 3em（垂直半径）;</span><br><span class="line">//省略遵循规则如上；等价于</span><br><span class="line"><span class="selector-tag">border-top-left-radius</span>: 2<span class="selector-tag">em</span> 0<span class="selector-class">.5em</span>;</span><br><span class="line"><span class="selector-tag">border-top-right-radius</span>: 1<span class="selector-tag">em</span> 3<span class="selector-tag">em</span>;</span><br><span class="line"><span class="selector-tag">border-bottom-right-radius</span>: 4<span class="selector-tag">em</span> 0<span class="selector-class">.5em</span>;</span><br><span class="line"><span class="selector-tag">border-bottom-left-radius</span>: 1<span class="selector-tag">em</span> 3<span class="selector-tag">em</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h4><p>盒阴影可渲染外阴影盒内阴影效果，默认外阴影效果；</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">X</span>轴 <span class="selector-tag">Y</span>轴 <span class="selector-tag">blur-radius</span> <span class="selector-tag">spread-radius</span> <span class="selector-tag">color</span> <span class="selector-tag">inset</span></span><br></pre></td></tr></table></figure>
+<p><strong>属性值含义：</strong></p>
+<p>X轴：指水平偏移量；其值可以是负值；如果是正值则阴影在对象的右边；负值则在左边</p>
+<p>Y轴：指阴影垂直偏移量；可以是负值；正值在对象的底部，负值则在对象的顶部</p>
+<p>blur-radius：阴影模糊半径；该参数可选；其值为0时表示阴影不具有模糊效果；其值越大阴影的边缘就越模糊</p>
+<p>spread-radius：阴影扩展半径；该值可以是正负值；如果是正值；则整个阴影都延伸扩大；反之则缩小</p>
+<p>color：此参数可选，如果不设定任何颜色时，浏览器会取默认色，但各浏览器默认色不一样，特别是在webkit内核下的safari和chrome浏览器将无色，也就是透明，建议不要省略此参数。</p>
+<p>inset`属性值只有在设置内阴影效果时才使用；</p>
+<h4 id="Border-image"><a href="#Border-image" class="headerlink" title="Border-image"></a>Border-image</h4><p>该属性是速记属性：是下列属性的集合</p>
+<ul>
+<li>Border-image-source:图像地址</li>
+<li>Border-image-slice：图像边界向内偏移</li>
+<li>Border-image-width：图像边界的宽度</li>
+<li>Border-image-outset：用于指定在边框外部绘制 border-image-area 的量</li>
+<li>Border-image-repeat：用于设置图像边界是否应重复（repeat）、拉伸（stretch）或铺满（round）。</li>
+</ul>
+<h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><p>该属性是一个速写属性；可拆分为：</p>
+<ul>
+<li>background-color</li>
+<li>background-image</li>
+<li>background-repeat</li>
+<li>background-position</li>
+<li>background-size</li>
+<li>background-origin</li>
+<li>background-clip</li>
+<li>background-attachment</li>
+</ul>
+<p><strong>background-color</strong></p>
+<p><strong>背景范围</strong></p>
+<p>background-color 属性为元素设置一种纯色。这种颜色会填充元素的内容、内边距和边框区域，扩展到元素边框的外边界（但不包括外边距）。如果边框有透明部分（如虚线边框），会透过这些透明部分显示出背景色。</p>
+<p><strong>background-image</strong>:背景图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(&apos;URL&apos;)</span><br></pre></td></tr></table></figure>
+<p>Background-repeat:设置是否及如何平铺背景图；默认背景图在水平和垂直方向重复；属性值：</p>
+<ul>
+<li>repeat:背景图将在垂直方向和水平方向重复</li>
+<li>repeat-x:背景图水平方向重复</li>
+<li>repeat-y：背景图垂直方向重复</li>
+<li>no-repeat：背景图将不平铺</li>
+</ul>
+<p><strong>background-position</strong>:设置背景图的起始位置</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">top\</td>
+<td style="text-align:left">center\</td>
+<td>bottom      &nbsp;left\</td>
+<td>center\</td>
+<td>right</td>
+<td>如果您仅规定了一个关键词，那么第二个值将是”center”。默认值：0% 0%。</td>
+</tr>
+<tr>
+<td style="text-align:left">x% y%</td>
+<td style="text-align:left">第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%。如果您仅规定了一个值，另一个值将是 50%。</td>
+</tr>
+<tr>
+<td style="text-align:left">xpos ypos</td>
+<td style="text-align:left">第一个值是水平位置，第二个值是垂直位置。左上角是 0 0。单位是像素 (0px 0px) 或任何其他的 CSS 单位。如果您仅规定了一个值，另一个值将是50%。您可以混合使用 % 和 position 值。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>background-size</strong>:设置背景图的尺寸</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>length</em></td>
+<td style="text-align:left">设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 “auto”。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>percentage</em></td>
+<td style="text-align:left">以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 “auto”。</td>
+</tr>
+<tr>
+<td style="text-align:left">cover</td>
+<td style="text-align:left">把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分也许无法显示在背景定位区域中。</td>
+</tr>
+<tr>
+<td style="text-align:left">contain</td>
+<td style="text-align:left">把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>background-origin</strong>：定位背景图位置</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">padding-box</td>
+<td style="text-align:left">背景图像相对于内边距框来定位。</td>
+</tr>
+<tr>
+<td style="text-align:left">border-box</td>
+<td style="text-align:left">背景图像相对于边框盒来定位。</td>
+</tr>
+<tr>
+<td style="text-align:left">content-box</td>
+<td style="text-align:left">背景图像相对于内容框来定位。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>background-clip</strong>：规定背景的现实位置</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">border-box</td>
+<td style="text-align:left">背景被裁剪到边框盒。</td>
+</tr>
+<tr>
+<td style="text-align:left">padding-box</td>
+<td style="text-align:left">背景被裁剪到内边距框。</td>
+</tr>
+<tr>
+<td style="text-align:left">content-box</td>
+<td style="text-align:left">背景被裁剪到内容框。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>background-attachment</strong>：设置背景图像是否固定或者随着页面的其余部分滚动</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">scroll</td>
+<td style="text-align:center">默认值。背景图像会随着页面其余部分的滚动而移动。</td>
+</tr>
+<tr>
+<td style="text-align:left">fixed</td>
+<td style="text-align:center">当页面的其余部分滚动时，背景图像不会移动。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:center">规定应该从父元素继承 background-attachment 属性的设置。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h4><p>该属性是一个速写属性：用于设置四个过渡属性</p>
+<ul>
+<li>transition-property:设置过渡效果的css属性的名称</li>
+<li>transition-duration：设置过渡效果需要多少秒或毫秒</li>
+<li>transition-timing-function：规定速度效果的速度取消；属性值<ul>
+<li>linear:规定以相同速度从开始至结束的过渡效果</li>
+<li>ease:规定慢速开始/然后变快/最后慢速结束的过渡效果</li>
+<li>ease-in：规定以慢速开始的过渡效果</li>
+<li>ease-out：规定以慢速结束的过渡效果</li>
+<li>ease-in-out：规定以慢速开始和结束的过渡效果</li>
+<li>cubic-bezier(n,n,n,n):在cubic-bezier函数中定义自己的值；可能的值时0至1之间的数值</li>
+</ul>
+</li>
+<li>transition-delay：过渡效果延迟时间</li>
+</ul>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>animation属性是一个简写属性；用于设置6个动画属性</p>
+<ul>
+<li>@keyframes:定义动画</li>
+<li>animation-name：绑定<code>@keyframes</code>定义的动画名称</li>
+<li>animation-duration：规定动画所花费的时间</li>
+<li>animation-timing-function：规定动画的速度曲线</li>
+<li>animation-delay：规定动画的延时</li>
+<li>animation-iteration-count：规定动画的播放次数</li>
+<li>animation-direction：规定是否应该轮流反向播放动画</li>
+<li>animation-play-state：规定动画是否正在运行或暂停</li>
+<li>animation-fill-mode：规定对象动画之外的状态</li>
+</ul>
+<p><strong>animation-fill-mode</strong>：规定动画在播放之前或之后；其动画效果是否可见</p>
+<table>
+<thead>
+<tr>
+<th>none</th>
+<th>不改变默认行为。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forwards</td>
+<td>当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。</td>
+</tr>
+<tr>
+<td>backwards</td>
+<td>在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。</td>
+</tr>
+<tr>
+<td>both</td>
+<td>向前和向后填充模式都被应用。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haohualiangshi.github.io/wechatpay.jpg" alt="AHao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haohualiangshi.github.io/alipay.jpg" alt="AHao Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/边框-阴影-background-transition-动画/" rel="tag"># 边框,阴影,background, transition,动画</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/前端进阶之路-CSS3新增选择器/" rel="next" title="前端进阶之路-CSS3新增选择器">
+                <i class="fa fa-chevron-left"></i> 前端进阶之路-CSS3新增选择器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="AHao">
+          <p class="site-author-name" itemprop="name">AHao</p>
+           
+              <p class="site-description motion-element" itemprop="description">阿豪的个人博客、主要涉及前端知识点和swift</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/haohualiangshi/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://blog.csdn.net/github_37195944" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-rotate-right"></i>
+                  
+                    
+                      CSDN
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#边框"><span class="nav-number">1.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius"><span class="nav-number">2.</span> <span class="nav-text">border-radius</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#box-shadow"><span class="nav-number">3.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Border-image"><span class="nav-number">4.</span> <span class="nav-text">Border-image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background"><span class="nav-number">5.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition"><span class="nav-number">6.</span> <span class="nav-text">transition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画"><span class="nav-number">7.</span> <span class="nav-text">动画</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AHao</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

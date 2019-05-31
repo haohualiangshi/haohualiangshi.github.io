@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-lans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="velocity,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="苦中作乐" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="velocity是一个加速js动画库；可依赖zepto和jq；也可以单独使用；具有色彩动画/变换/循环/缓动/SVG支持/滚动。兼容性：V1版本能够兼容IE8和android2.3；v2通用版本仅兼容Ie11等现代浏览器；参考网址) 基本参数Velocity可以通过两种方式调用；函数调用和链式调用；两者返回值相同；但使用它时有一个小的但很重要的区别；  如果从另外一个Velocity调用传递结果；">
+<meta name="keywords" content="velocity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Velocity使用">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/Velocity使用/index.html">
+<meta property="og:site_name" content="苦中作乐">
+<meta property="og:description" content="velocity是一个加速js动画库；可依赖zepto和jq；也可以单独使用；具有色彩动画/变换/循环/缓动/SVG支持/滚动。兼容性：V1版本能够兼容IE8和android2.3；v2通用版本仅兼容Ie11等现代浏览器；参考网址) 基本参数Velocity可以通过两种方式调用；函数调用和链式调用；两者返回值相同；但使用它时有一个小的但很重要的区别；  如果从另外一个Velocity调用传递结果；">
+<meta property="og:locale" content="zh-lans">
+<meta property="og:updated_time" content="2019-05-31T08:08:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Velocity使用">
+<meta name="twitter:description" content="velocity是一个加速js动画库；可依赖zepto和jq；也可以单独使用；具有色彩动画/变换/循环/缓动/SVG支持/滚动。兼容性：V1版本能够兼容IE8和android2.3；v2通用版本仅兼容Ie11等现代浏览器；参考网址) 基本参数Velocity可以通过两种方式调用；函数调用和链式调用；两者返回值相同；但使用它时有一个小的但很重要的区别；  如果从另外一个Velocity调用传递结果；">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/Velocity使用/">
+
+
+
+
+
+  <title>Velocity使用 | 苦中作乐</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-lans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苦中作乐</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">坚持就是胜利</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/Velocity使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦中作乐">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Velocity使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-31T16:08:58+08:00">
+                2019-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>velocity是一个加速js动画库；可依赖zepto和jq；也可以单独使用；具有色彩动画/变换/循环/缓动/SVG支持/滚动。兼容性：V1版本能够兼容IE8和android2.3；v2通用版本仅兼容Ie11等现代浏览器；<a href="[http://velocityjs.org](http://velocityjs.org/">参考网址</a>)</p>
+<h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><code>Velocity</code>可以通过两种方式调用；<strong>函数调用</strong>和<strong>链式调用</strong>；两者返回值相同；但使用它时有一个小的但很重要的区别；</p>
+<ul>
+<li>如果从另外一个<code>Velocity</code>调用传递结果；那么<code>Velocity(result,…)</code>作为函数调用将把元素作为一个全新的调用，命令<code>stop</code>意味着他们上的活动动画将被停止；</li>
+<li>如果是链式；<code>result.velocity(…)</code>,那么它将在目标中添加动画；这样stop命令只会停止特定的动画；不会影响该元素上的其他动画；</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数式调用</span></span><br><span class="line">    <span class="keyword">var</span> div1 = <span class="built_in">document</span>.querySelector(<span class="string">"#div1"</span>);</span><br><span class="line">    <span class="keyword">var</span> div2 = <span class="built_in">document</span>.querySelector(<span class="string">'#div2'</span>);</span><br><span class="line">    Velocity(div1, &#123;<span class="string">"font-size"</span>: <span class="string">"60px"</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">        result.velocity(<span class="string">"stop"</span>,&#123;<span class="string">"font-size"</span>:<span class="string">"12px"</span>&#125;)</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链式调用；依赖jq</span></span><br><span class="line">$element</span><br><span class="line">    <span class="comment">/* Animate the width property. */</span></span><br><span class="line">    .velocity(&#123; <span class="attr">width</span>: <span class="number">75</span> &#125;)</span><br><span class="line">    <span class="comment">/* Then, when finished, animate the height property. */</span></span><br><span class="line">    .velocity(&#123; <span class="attr">height</span>: <span class="number">0</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="全局Velocity"><a href="#全局Velocity" class="headerlink" title="全局Velocity"></a>全局Velocity</h4><p>使用<code>Velocity(…)</code>生成动画；第一个参数是元素或者元素列表；后跟属性或者其他参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span><br><span class="line">Velocity(elements, &#123;<span class="string">"background-color"</span>: <span class="string">"red"</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="链式velocity"><a href="#链式velocity" class="headerlink" title="链式velocity"></a>链式velocity</h4><p>使用链式调用时；通过元素或者元素列表调用<code>.velocity()</code>方法；第一个参数是属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$element</span><br><span class="line">    <span class="comment">/* Animate the width property. */</span></span><br><span class="line">    .velocity(&#123; <span class="attr">width</span>: <span class="number">75</span> &#125;)</span><br><span class="line">    <span class="comment">/* Then, when finished, animate the height property. */</span></span><br><span class="line">    .velocity(&#123; <span class="attr">height</span>: <span class="number">0</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>Velocity将css属性和值的映射作为其第一个参数；将一些可选的用于描述动画的属性对象作为第二个参数；通过修改<code>Velocity.defaults</code>可以全局修改覆盖默认值；<strong>使用HEX设置色值时不可以设置连续为00的值；否则不起作用</strong></p>
+<h4 id="逗号分隔"><a href="#逗号分隔" class="headerlink" title="逗号分隔"></a>逗号分隔</h4><p>对于css属性，动画属性中的持续时间/动画属性/完成属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">element.velocity(propertyMap[,duration][,easing][,complete])</span><br><span class="line"></span><br><span class="line">$element.velocity(&#123; <span class="attr">top</span>: <span class="number">50</span> &#125;, <span class="number">1000</span>);</span><br><span class="line">$element.velocity(&#123; <span class="attr">top</span>: <span class="number">50</span> &#125;, <span class="number">1000</span>, <span class="string">"swing"</span>);</span><br><span class="line">$element.velocity(&#123; <span class="attr">top</span>: <span class="number">50</span> &#125;, <span class="string">"swing"</span>);</span><br><span class="line">$element.velocity(&#123; <span class="attr">top</span>: <span class="number">50</span> &#125;, <span class="number">1000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="string">"Hi"</span>); &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="动画选项"><a href="#动画选项" class="headerlink" title="动画选项"></a>动画选项</h4><ol>
+<li><p><code>begin:function(elements,activeCall)</code>:该函数用于在动画执行之前调用；定义动画每调用一次则该函数执行一次；循环动画仅执行一次；回调的第一个参数是该回调的上下文，也是一个元素数组；单独使用该元素时必须遍历元素数组；第二个参数传递一个AnimationCall对象，可用<code>AnimationCall.element</code>描述动画的第一个element成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).velocity(</span><br><span class="line">  &#123; </span><br><span class="line">    scale: 1.5</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; </span><br><span class="line">    duration: 2000,</span><br><span class="line">    begin: function() &#123; </span><br><span class="line">       alert(&quot;This is called before the animation begins.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>complete:function(elements,activeCall)</code>该函数与<code>begin</code>是相对的；每调用一次<code>velocity(…)</code>执行动画；该函数在动画结束执行一次；如果循环调用；则完整的回调仅触发一次；在最后一次循环交替结束时；参数同<code>begin</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).velocity(</span><br><span class="line">  &#123; </span><br><span class="line">    scale: 1.5</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; </span><br><span class="line">    duration: 2000,</span><br><span class="line">    begin: function() &#123; </span><br><span class="line">       alert(&quot;This is called before the animation begins.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p><code>delay:+-Num</code>指定的延迟选项；以毫秒为单位;可以同选项<code>loop</code>或者<code>repeat</code>选项同时设置，以在每次迭代之间创建暂停；您可以指定一个负数来告诉它从稍后开始动画，这将相应地减少动画的持续时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">element.velocity(&#123;</span><br><span class="line">    height: [<span class="string">"10em"</span>, <span class="string">"5em"</span>]</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    loop: <span class="number">4</span>,</span><br><span class="line">    <span class="comment">/* Wait 100ms before each direction. */</span></span><br><span class="line">    delay: <span class="number">100</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">element.velocity(&#123;</span><br><span class="line">    height: [<span class="string">"10em"</span>, <span class="string">"5em"</span>]</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    duration: <span class="number">1000</span>,</span><br><span class="line">    <span class="comment">/* Start the animation at 40%, and only run for a total of 600ms. */</span></span><br><span class="line">    delay: <span class="number">-400</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Use one of the jQuery UI easings. */</span></span><br><span class="line">$element.velocity(&#123; <span class="attr">width</span>: <span class="number">50</span> &#125;, <span class="string">"easeInSine"</span>);</span><br><span class="line"><span class="comment">/* Use a custom bezier curve. */</span></span><br><span class="line">$element.velocity(&#123; <span class="attr">width</span>: <span class="number">50</span> &#125;, [ <span class="number">0.17</span>, <span class="number">0.67</span>, <span class="number">0.83</span>, <span class="number">0.67</span> ]);</span><br><span class="line"><span class="comment">/* Use spring physics. */</span></span><br><span class="line">$element.velocity(&#123; <span class="attr">width</span>: <span class="number">50</span> &#125;, [ <span class="number">250</span>, <span class="number">15</span> ]);</span><br><span class="line"><span class="comment">/* Use step easing. */</span></span><br><span class="line">$element.velocity(&#123; <span class="attr">width</span>: <span class="number">50</span> &#125;, [ <span class="number">8</span> ]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>drag:Bool</code>:设置该选项为<code>true</code>;连续增加集合中每个元素的动画持续时间；最后一个元素将使用等于动画原始值的持续时间进行动画处理；最后一个元素的持续时间会逐渐接近原始值；最终结果是跨元素缓和效果</p>
+</li>
+<li><p><code>duration:num/String</code>:支持毫秒为单位的数字时间或者是描述持续时间的字符串<code>slow/normal/fast</code></p>
+</li>
+<li><p><code>easing</code>属性默认支持一下类型：</p>
+<ul>
+<li>预先打包到Velocity中的jqUI动画（除了back/bounce和弹性缓动类型）；</li>
+<li>CSS3定义的动画类型。<code>ease/ease-in/ease-out/ease-in-out</code></li>
+<li>CSS3定义的贝塞尔曲线动画</li>
+<li>通过数组<code>[tension张力默认值500,firction摩擦力默认值20]</code>定义弹性动画；</li>
+<li>step easing：通过[steps]的形式传递一项数组；动画将使用指定的步数跳转到其结束值</li>
+</ul>
+</li>
+<li><p>fpsLimit:该属性是一个全局属性：通过更改<code>Velocity.defaults.fpsLimit</code>设置允许更改动画每秒的最大次数；</p>
+</li>
+<li><p><code>loop:true/num</code>:设置为true时将是无限次动画；或使用num定义动画的次数；确保在同一元素上触发另一个循环之前停止一个无限循环。可以使用<code>stop</code>和<code>finish</code>命令停止循环。</p>
+</li>
+<li><p>progress传递<em>进度</em>选项一个回调函数，以便在动画持续时间内重复触发。回调函数传递有关调用状态的数据,回调作为其上下文和第一个参数传递整个原始DOM（而不是jQuery）元素数组。要单独访问这些元素，必须使用jQuery的$ .each（）或JavaScript的原生.forEach（）遍历数组。此外，它已通过：<em>完成</em>，<em>剩余</em>，<em>开始</em>和<em>tweenValue</em>：</p>
+<ol>
+<li><strong>完成</strong>：呼叫的完成百分比（作为小数值）。</li>
+<li><strong>剩余</strong>：在呼叫完成之前<strong>剩余的</strong>时间（以毫秒为单位）。</li>
+<li><strong>start</strong>：调用开始的绝对时间（在Unix时间）。</li>
+<li><strong>tweenValue</strong>：虚拟<em>补间</em>动画属性的当前值，可以选择将其传递给Velocity调用。传入<em>补间</em>动画属性的实用程序是，它允许您通过<em>进程</em>回调捕获其补间进度的确切值。与所有其他Velocity动画属性一样，此虚拟属性受调用的<em>缓动</em>行为影响。利用此<em>补间</em>属性，您可以将Velocity转换为自定义补间引擎，以便为任意DOM属性的更改设置动画</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123;</span><br><span class="line">    opacity: 0,</span><br><span class="line">    tween: 1000 // Optional</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    progress: function(elements, complete, remaining, start, tweenValue) &#123;</span><br><span class="line">        console.log((complete * 100) + &quot;%&quot;);</span><br><span class="line">        console.log(remaining + &quot;ms remaining!&quot;);</span><br><span class="line">        console.log(&quot;The current tween value is &quot; + tweenValue)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="10">
+<li><p><code>queue</code>该属性定义的是一个动画序列；它将按顺序自动运行；当第一个完成时第二个自动开始；要暂停动画队列请使用<code>pause</code>指令,可以将queue设置为<em>false</em>以强制新动画调用立即与任何当前活动的动画并行运行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Trigger a normal Velocity animation</span></span><br><span class="line">$(<span class="string">"div"</span>).velocity(&#123; </span><br><span class="line">    width: <span class="number">50</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    duration: <span class="number">3000</span></span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line"><span class="comment">// Trigger parallel queueing halfway through</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"div"</span>).velocity(&#123;</span><br><span class="line">      height: <span class="number">50</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      queue: <span class="literal">false</span>,</span><br><span class="line">      duration: <span class="number">1500</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;, <span class="number">1500</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//或者定义动画序列</span></span><br><span class="line"><span class="comment">// Create two custom queues.</span></span><br><span class="line">$(<span class="string">"div"</span>)</span><br><span class="line">  .velocity(&#123; <span class="attr">translateX</span>: <span class="number">75</span> &#125;, &#123; <span class="attr">queue</span>: <span class="string">"a"</span> &#125;)</span><br><span class="line">  .velocity(&#123; <span class="attr">width</span>: <span class="number">50</span> &#125;, &#123; <span class="attr">queue</span>: <span class="string">"b"</span> &#125;)</span><br><span class="line">  .velocity(&#123; <span class="attr">translateY</span>: <span class="number">75</span> &#125;, &#123; <span class="attr">queue</span>: <span class="string">"a"</span> &#125;)</span><br><span class="line">  .velocity(&#123; <span class="attr">height</span>: <span class="number">0</span> &#125;, &#123; <span class="attr">queue</span>: <span class="string">"b"</span> &#125;)</span><br><span class="line">  </span><br><span class="line"><span class="comment">// Later on, dequeue the "a" queue (translations).</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">"div"</span>).dequeue(<span class="string">"a"</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Even later, dequeue the "b" queue (dimensions).</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">"div"</span>).dequeue(<span class="string">"b"</span>);</span><br><span class="line">&#125;, <span class="number">4000</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="11">
+<li><p><code>repeat</code>选项设置为整数以指定动画应运行的次数；与循环不同，指定的动画完成后不会再次运行；个人看文档刚觉和<code>loop</code>选项功能类似</p>
+</li>
+<li><p><code>speed</code>选项定义动画的播放速度；默认是1；</p>
+</li>
+<li><p><code>stagger</code>选项定义每项动画的错开时间；首个动画为零；n个动画的时间是<code>n*staggerNum</code>;作为回调函数时；第一个参数事索引值/第二个参数事元素长度/第三个参数事元素数组/第四个参数事字符串”stagger”</p>
+</li>
+<li><p><code>sync</code>:默认为<code>true</code>允许多个元素上的动画同时启动</p>
+</li>
+<li><p><code>scrollLeft</code>:</p>
+</li>
+<li><p><code>scrollTop</code>:用于元素上的scrollTop属性，仅支持<code>px/%</code>单位</p>
+</li>
+<li><p><code>tween</code></p>
+</li>
+</ol>
+<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><ol>
+<li><p><code>finish</code>如果要提前结束动画请使用finish作为velocity的第一个参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.velocity(<span class="string">"finish"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>pause</code>该命令允许暂停正在运行的动画或者队列，可以使用<code>resume</code>再次启用动画</p>
+</li>
+<li><p><code>property</code>命令允许在维护Velocity的内部缓存时设置或获取元素的属性，“style”命令实际上是此的同义词</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">element.velocity(<span class="string">"property"</span>, <span class="string">"opacity"</span>, <span class="number">0.5</span>);</span><br><span class="line">element.velocity(<span class="string">"property"</span>, &#123; <span class="attr">opacity</span>: <span class="number">0.5</span>, <span class="attr">height</span>: <span class="string">"10em"</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> height = element.velocity(<span class="string">"property"</span>, <span class="string">"height"</span>);</span><br><span class="line"><span class="comment">// = "25px"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> height = elementList.velocity(<span class="string">"property"</span>, <span class="string">"height"</span>);</span><br><span class="line"><span class="comment">// = [ "25px", ... ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> widthHeight = element.velocity(<span class="string">"property"</span>, [<span class="string">"width"</span>, <span class="string">"height"</span>]);</span><br><span class="line"><span class="comment">// = &#123; width: "25px", height: "25px" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> widthHeight = elementList.velocity(<span class="string">"property"</span>, [<span class="string">"width"</span>, <span class="string">"height"</span>]);</span><br><span class="line"><span class="comment">// = [ &#123; width: "25px", height: "25px" &#125;, ... ]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>registerAction</code>:通过此命令注册新命令，该命令必须是一个函数；它接受一个提供给正在使用的命令的参数数组，一个元素数组，一个PromiseHandler和一个字符串命令名。</p>
+</li>
+<li><p><code>registerEasing</code>:可以注册自己的动画。动画函数将完成百分比作为小数，起始值，结束值和动画属性名称，然后返回要使用的最终值。开始和结束值将是数字。当动画恰好为0或1时，建议直接复制起始值和结束值（除非动画本身是这样做的）；要注册可以在Velocity中使用自定义的动画；必须使用以下函数调用<code>registerEasing</code>命令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Velocity(<span class="string">"registerEasing"</span>, <span class="string">"myCustomEasing"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">percentComplete, startValue, endValue, property</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> percentComplete === <span class="number">0</span></span><br><span class="line">		? startValue</span><br><span class="line">        : percentComplete === <span class="number">1</span></span><br><span class="line">		    ? endValue</span><br><span class="line">            : (<span class="number">0.5</span> - <span class="built_in">Math</span>.cos(percentComplete * <span class="built_in">Math</span>.PI) / <span class="number">2</span>) * (endValue - startValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>registerNormalization通过</code>“registerNormalization”命令注册规范化。这需要一个属性名称，以及一个将元素和可选值作为参数的回调。如果值未定义，那么这是一个get动作，否则它是一个set动作。此外，如果set动作返回false-ey值，则它会自动将同一propertyName的css样式设置为相同的值（因此返回<code>true</code>跳过此值）</p>
+</li>
+<li><p><code>registerSequence</code>:该命令允许注册一个或者多个命名序列以供以后使用</p>
+</li>
+<li><p><code>pause</code>暂停动画</p>
+</li>
+<li><p><code>stop</code>停止动画</p>
+</li>
+<li><p><code>style</code>“style”命令是“property”命令的同义词</p>
+</li>
+</ol>
+<h3 id="内部定义的功能性函数"><a href="#内部定义的功能性函数" class="headerlink" title="内部定义的功能性函数"></a>内部定义的功能性函数</h3><ol>
+<li><p>检测是否是布尔值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check if a variable is a boolean.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBoolean</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> variable === <span class="literal">true</span> || variable === <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检测是否是函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check if a variable is a boolean.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isBoolean</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> variable === <span class="literal">true</span> || variable === <span class="literal">false</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检测是否是函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check if a variable is a function.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(variable) === <span class="string">"[object Function]"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检测是否是元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check if a variable is an HTMLElement or SVGElement.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isNode</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> !!(variable &amp;&amp; variable.nodeType);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>是否是数值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check if a variable is a number.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> variable === <span class="string">"number"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量是否是普通对象而不是实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check if a variable is a plain object (and not an instance).</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (!variable || (<span class="keyword">typeof</span> variable === <span class="string">"undefined"</span> ? <span class="string">"undefined"</span> : _typeof(variable)) !== <span class="string">"object"</span> || variable.nodeType || <span class="built_in">Object</span>.prototype.toString.call(variable) !== <span class="string">"[object Object]"</span>) &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">var</span> proto = <span class="built_in">Object</span>.getPrototypeOf(variable);</span><br><span class="line">     <span class="keyword">return</span> !proto || proto.hasOwnProperty(<span class="string">"constructor"</span>) &amp;&amp; proto.constructor === <span class="built_in">Object</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>是否是字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check if a variable is a string.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isString</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">typeof</span> variable === <span class="string">"string"</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查变量是否是类似于数组包装的jQuery、Zepto或类似的，其中每个索引值都是一个节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check if a variable is an array-like wrapped jQuery, Zepto or similar, where</span></span><br><span class="line"><span class="comment">  * each indexed value is a Node.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isWrapped</span>(<span class="params">variable</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> variable &amp;&amp; variable !== <span class="built_in">window</span> &amp;&amp; isNumber(variable.length) &amp;&amp; !isString(variable) &amp;&amp; !isFunction(variable) &amp;&amp; !isNode(variable) &amp;&amp; (variable.length === <span class="number">0</span> || isNode(variable[<span class="number">0</span>]));</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查是属性是对象的可枚举成员</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Check is a property is an enumerable member of an object.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">propertyIsEnumerable</span>(<span class="params">obj, property</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.propertyIsEnumerable.call(obj, property);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>克隆一个数组，也适用于类数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Clone an array, works for array-like too.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneArray</span>(<span class="params">arrayLike</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(arrayLike, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取当前毫秒</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="built_in">Date</span>.now ? <span class="built_in">Date</span>.now : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haohualiangshi.github.io/wechatpay.jpg" alt="AHao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haohualiangshi.github.io/alipay.jpg" alt="AHao Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/velocity/" rel="tag"># velocity</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/31/前端跨站技术简述/" rel="next" title="前端跨站技术简述">
+                <i class="fa fa-chevron-left"></i> 前端跨站技术简述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="AHao">
+          <p class="site-author-name" itemprop="name">AHao</p>
+           
+              <p class="site-description motion-element" itemprop="description">阿豪的个人博客、主要涉及前端知识点和swift</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/haohualiangshi/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://blog.csdn.net/github_37195944" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-rotate-right"></i>
+                  
+                    
+                      CSDN
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本"><span class="nav-number">1.</span> <span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局Velocity"><span class="nav-number">1.2.</span> <span class="nav-text">全局Velocity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式velocity"><span class="nav-number">1.3.</span> <span class="nav-text">链式velocity</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逗号分隔"><span class="nav-number">2.1.</span> <span class="nav-text">逗号分隔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画选项"><span class="nav-number">2.2.</span> <span class="nav-text">动画选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令"><span class="nav-number">2.3.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部定义的功能性函数"><span class="nav-number">3.</span> <span class="nav-text">内部定义的功能性函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AHao</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
